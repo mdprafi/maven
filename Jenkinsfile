@@ -12,7 +12,7 @@ pipeline {
 	    
 	         stage ('Compile stage') {
 		    steps {
-		    bat 'mvn compile'
+		    bat 'mvn compil'
 		    }
 	          }
 	    
