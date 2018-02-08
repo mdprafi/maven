@@ -5,18 +5,26 @@ pipeline {
  
 	tools {
 		maven 'maven_3_5_0'
-		jdk 'java8'
+		jdk 'Jdk1.8'
 	}
 	
     stages {
-               stage('Compile Stage') {
+               stage('Initialize') {
                  steps {
 		    
-	            echo "PATH = C:\Maven\apache-maven-3.5.0\bin"
-		    echo "M2_HOME = C:\Maven\apache-maven-3.5.0"
+	            echo "PATH = %PATH%"
+		    echo "M2_HOME = %M2_HOME%"
 		   
 		     }
             }
+	    
+	    
+	    stage('Build') {
+                 steps {
+			 bat 'cd NumberGenerator & mvn install'
+		       }
+                }
+	    
         }
         
     }
