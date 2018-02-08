@@ -1,33 +1,22 @@
 pipeline {
-    agent any
-
+	agent {
+		label "windows"
+	}
+ 
+	tools {
+		maven 'maven_3_5_0'
+		jdk 'java8'
+	}
+	
     stages {
                stage('Compile Stage') {
                  steps {
-		    withMaven(maven : 'maven_3_5_2'){
-				sh 'clean compile'
+		    bat ...
+	            echo "PATH = C:\Maven\apache-maven-3.5.0\bin"
+		    echo "M2_HOME = C:\Maven\apache-maven-3.5.0"
+		    ...
 		     }
             }
         }
-	    
-	    
-                  stage('Testing Stage') {
-                    steps {
-		    withMaven(maven : 'maven_3_5_2'){
-		    sh 'mvn test'
-			}
-            }
-        }
-	    
-	    
-        stage('Install Stage') {
-            steps {
-		withMaven(maven : 'maven_3_5_2'){
-		 sh 'mvn install'	
-		}
-            }
-        }
-	
         
     }
-}
