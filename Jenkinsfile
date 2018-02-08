@@ -1,23 +1,22 @@
 pipeline {
 	agent any
  
-	tools {
-		maven 'maven_3_5_0'
-		jdk 'Jdk1.8'
-	}
+	
 	
     stages {
-               stage('Initialize') {
-                 steps {
-		    
-	            echo "PATH = %PATH%"
-		    echo "M2_HOME = %M2_HOME%"
-		   
+	         stage ('Cleaning stage') {
+		    steps {
+		    bat 'mvn clean'
 		     }
-            }
+	          }
 	    
+	         stage ('Compile stage') {
+		    steps {
+		    bat 'mvn comppile'
+		    }
+	          }
 	    
-	    stage('Build') {
+	        stage('Build') {
                  steps {
 			 bat 'mvn install'
 		       }
