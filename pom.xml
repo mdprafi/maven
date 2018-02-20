@@ -82,13 +82,7 @@
   </dependencies>
 	
 	<distributionManagement>
-        <repository>
-          <id>deployment</id>
-             <name>Nanu release</name>
-             <url>http://localhost:8081/repository/Nanu-release/</url>
-        </repository>
-
-     <snapshotRepository>
+             <snapshotRepository>
          <id>deployment</id>
          <name>Nanu snapshot </name>
          <url>http://localhost:8081/repository/Nanu-snaps/</url>
