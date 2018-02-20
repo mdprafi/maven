@@ -1,5 +1,18 @@
+<!DOCTYPE html>
 <html>
-<body>
-<h2>Hello World!</h2>
+<head>
+    
+      <label for="uname"><b>Username</b>
+      <input type="text" name="uname" required>
+      <br><br>
+
+      <label for="psw"><b>Password</b>
+      <input type="password"name="psw" required>
+
+      <br><br>
+
+      <button type="submit">Login</button>
+
+
 </body>
 </html>
